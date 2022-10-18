@@ -1,7 +1,7 @@
 # hass_cards
 # Person Card
 ## person_sander_overview
-    ![image](https://user-images.githubusercontent.com/100353268/196522714-2934a9e6-9938-4bba-9df1-2ed0b662259c.png)
+![image](https://user-images.githubusercontent.com/100353268/196523170-79faf70d-71f6-4014-b65c-054e8d0639cb.png)
 
 # Room Cards
 ## badkamer_overview
