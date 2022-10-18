@@ -1,0 +1,86 @@
+type: custom:vertical-stack-in-card
+mode: vertical
+cards:
+  - type: custom:mushroom-person-card
+    icon_type: entity-picture
+    layout: horizontal
+    entity: person.sander
+    tap_action:
+      action: more-info
+  - type: custom:mushroom-chips-card
+    chips:
+      - type: template
+        icon: |2-
+            {% if is_state(entity, 'on') %}
+            mdi:power-plug
+            {% else %}
+            mdi:power-plug-off
+            {% endif %}
+        icon_color: |2-
+            {% if is_state(entity, 'on') %}
+            green
+            {% else %}
+            grey
+            {% endif %}
+        entity: binary_sensor.pixel_4_xl_is_charging
+        tap_action:
+          action: more-info
+      - type: template
+        entity: sensor.pixel_4_xl_battery_level
+        icon: |2
+                    {% set bl = states('sensor.pixel_4_xl_battery_level') | int %}
+                    {% if bl < 10 %} mdi:battery-outline
+                    {% elif bl < 20 %} mdi:battery-10
+                    {% elif bl < 30 %} mdi:battery-20
+                    {% elif bl < 40 %} mdi:battery-30
+                    {% elif bl < 50 %} mdi:battery-40
+                    {% elif bl < 60 %} mdi:battery-50
+                    {% elif bl < 70 %} mdi:battery-60
+                    {% elif bl < 80 %} mdi:battery-70
+                    {% elif bl < 90 %} mdi:battery-80
+                    {% elif bl < 100 %} mdi:battery-90
+                    {% elif bl == 100 %} mdi:battery
+                    {% else %} mdi:battery-unknown
+                    {% endif %}
+        icon_color: |2-
+                    {% set bl = states('sensor.pixel_4_xl_battery_level') | int %}
+                    {% if bl < 10 %} red
+                    {% elif bl < 20 %} red
+                    {% elif bl < 30 %} red
+                    {% elif bl < 40 %} orange
+                    {% elif bl < 50 %} orange
+                    {% elif bl < 60 %} green
+                    {% elif bl < 70 %} green
+                    {% elif bl < 80 %} green
+                    {% elif bl < 90 %} green
+                    {% elif bl < 100 %} green
+                    {% elif bl == 100 %} green
+                    {% else %} grey
+                    {% endif %}
+        tap_action:
+          action: more-info
+      - type: template
+        icon: |2-
+            {% if is_state(entity, 'Transmitting') %}
+            mdi:bluetooth
+            {% else %}
+            mdi:bluetooth-off
+            {% endif %}
+        icon_color: |2-
+            {% if is_state(entity, 'Transmitting') %}
+            blue
+            {% else %}
+            grey
+            {% endif %}
+        entity: sensor.pixel_4_xl_ble_transmitter
+        tap_action:
+          action: more-info
+    alignment: center
+    card_mod:
+      style: |
+        ha-card {
+          --chip-box-shadow: none;
+          --chip-background: none;
+          --chip-spacing: 0;
+          : -36px;
+        } 
