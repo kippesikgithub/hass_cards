@@ -1,5 +1,5 @@
 # hass_cards
-These room cards can easily be inserted into grid cards, in our setup, clicking on the card itself navigates you to the subview of that room. You need the "vertical stack in card" AND "card mod" from hacs.
+These room cards can easily be inserted into grid cards, in our setup, clicking on the card itself navigates you to the subview of that room. It is far from finished, but can be handy as examples for your own cards if you like them. You need the "vertical stack in card" AND "card mod" from hacs.
 You need the card mod from hacs
 ![dashboard](https://user-images.githubusercontent.com/100353268/196526936-0415199b-2216-4c2f-bd0b-9b59b71f96c4.gif)
 
