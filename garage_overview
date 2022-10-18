@@ -1,0 +1,149 @@
+type: custom:vertical-stack-in-card
+mode: vertical
+cards:
+  - type: custom:mushroom-template-card
+    primary: Garage
+    icon: mdi:garage
+    icon_color: white
+    layout: horizontal
+    entity: light.garage_group_hue
+    secondary: >-
+      {{states('sensor.garage_motion_hue_temperature') }}°C |
+      {{states('sensor.garage_motion_hue_illuminance_lux') | int }}lux
+    tap_action:
+      action: navigate
+      navigation_path: /lovelace-tablet/garage
+  - type: custom:vertical-stack-in-card
+    horizontal: true
+    cards:
+      - type: custom:mushroom-template-card
+        entity: light.garage_group_hue
+        layout: vertical
+        icon: |-
+          {% if is_state('light.garage_group_hue', 'on') %}
+          hue:single-spot
+          {% else %}
+          hue:single-spot
+          {% endif %}
+        icon_color: |-
+          {% if is_state('light.garage_group_hue', 'on') %}
+            yellow
+          {% endif %}
+      - type: custom:mushroom-template-card
+        entity: light.garagekeuken
+        layout: vertical
+        use_light_color: true
+        icon: |-
+          {% if is_state('light.garagekeuken', 'on') %}
+          mdi:countertop
+          {% else %}
+          mdi:countertop
+          {% endif %}
+        icon_color: |-
+          {% if is_state('light.garagekeuken', 'on') %}
+            yellow
+          {% endif %}
+  - type: custom:mushroom-chips-card
+    chips:
+      - type: template
+        icon: mdi:motion-sensor
+        icon_color: |2-
+            {% if is_state(entity, 'on') %}
+            blue
+            {% else %}
+            grey
+            {% endif %}
+        entity: binary_sensor.garage_motion_hue_occupancy
+        tap_action:
+          action: more-info
+      - type: entity
+        entity: sensor.ikea_vindriktning_garage_pm25
+        icon_color: blue
+      - type: template
+        icon: |-
+          {% if is_state(entity, 'on') %}
+          mdi:bicycle-cargo
+          {% else %}
+          mdi:bicycle-cargo
+          {% endif %}
+        icon_color: |2-
+            {% if is_state(entity, 'on') %}
+            green
+            {% else %}
+            grey
+            {% endif %}
+        entity: switch.bakfietslader
+        tap_action:
+          action: more-info
+      - type: conditional
+        conditions:
+          - entity: sensor.espresense_garage_count
+            state_not: '0'
+        chip:
+          type: entity
+          icon: mdi:human-greeting
+          icon_color: green
+          entity: sensor.espresense_garage_count
+          tap_action:
+            action: more-info
+      - type: template
+        icon: |-
+          {% if is_state(entity, 'off') %}
+          mdi:garage-variant-lock
+          {% else %}
+          mdi:garage-open-variant
+          {% endif %}
+        icon_color: |2-
+            {% if is_state(entity, 'off') %}
+            green
+            {% else %}
+            red
+            {% endif %}
+        entity: binary_sensor.garage_garagedeur_aqara_contact
+        tap_action:
+          action: more-info
+      - type: template
+        icon: |-
+          {% if is_state(entity, 'off') %}
+          mdi:door-closed-lock
+          {% else %}
+          mdi:door-open
+          {% endif %}
+        icon_color: |2-
+            {% if is_state(entity, 'off') %}
+            green
+            {% else %}
+            red
+            {% endif %}
+        entity: binary_sensor.garage_tuindeur_aqara_contact
+        tap_action:
+          action: more-info
+    alignment: end
+    card_mod:
+      style: |
+        ha-card {
+          --chip-box-shadow: none;
+          --chip-background: none;
+          --chip-spacing: 0;
+          : -36px;
+        } 
+        mushroom-template-chip:nth-child(1)$: |
+          {% if is_state('binary_sensor.garage_motion_hue_occupancy','on') %}
+          ha-icon {
+            animation: clip 2s linear infinite;
+          }
+          @keyframes clip {
+            50% { clip-path: polygon(0 0, 55% 0, 100% 100%, 0 100%); }
+          }
+          .shape {
+            --shape-animation: motion 2s linear infinite;
+          }
+          @keyframes motion {
+            0%, 100% { --shape-color: rgba(var(--rgb-blue), 0.3); }
+            50% { --shape-color: rgba(var(--rgb-blue), 0.2); }
+          }
+          }
+          {% else %}
+
+          {% endif %}
+          }
