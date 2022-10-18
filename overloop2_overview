@@ -1,0 +1,109 @@
+type: custom:vertical-stack-in-card
+mode: vertical
+cards:
+  - type: custom:mushroom-template-card
+    primary: Overloop2
+    icon: hue:room-other
+    icon_color: teal
+    layout: horizontal
+    entity: light.overloop2_hue
+    secondary: >-
+      {{states('sensor.overloop2_motion_hue_temperature') }}°C |
+      {{states('sensor.overloop2_motion_hue_illuminance_lux') | int }}lux
+    tap_action:
+      action: navigate
+      navigation_path: /lovelace-tablet/overloop2
+  - type: custom:vertical-stack-in-card
+    horizontal: true
+    cards:
+      - type: custom:mushroom-template-card
+        entity: light.overloop2_hue
+        layout: vertical
+        icon: |-
+          {% if is_state('light.overloop2_hue', 'on') %}
+          hue:single-spot
+          {% else %}
+          hue:single-spot
+          {% endif %}
+        icon_color: |-
+          {% if is_state('light.overloop2_hue', 'on') %}
+            yellow
+          {% endif %}
+  - type: custom:mushroom-chips-card
+    chips:
+      - type: template
+        icon: mdi:smoke
+        icon_color: |2-
+            {% if is_state(entity, 'on') %}
+            red
+            {% else %}
+            grey
+            {% endif %}
+        entity: binary_sensor.rookmelder_overloop2_kaku_smoke
+        tap_action:
+          action: more-info
+      - type: template
+        icon: mdi:motion-sensor
+        icon_color: |2-
+            {% if is_state(entity, 'on') %}
+            blue
+            {% else %}
+            grey
+            {% endif %}
+        entity: binary_sensor.overloop2_motion_hue_occupancy
+        tap_action:
+          action: more-info
+    alignment: end
+    card_mod:
+      style:
+        mushroom-template-chip: |
+          ha-card {
+            --chip-box-shadow: none;
+            --chip-background: none;
+            --chip-spacing: 0;
+            : -36px;
+          } 
+        mushroom-template-chip:nth-child(1)$: >
+          {% if is_state('binary_sensor.rookmelder_overloop2_kaku_smoke','on')
+          %}
+
+          ha-icon {
+            animation: clip 2s linear infinite;
+          }
+
+          @keyframes clip {
+            50% { clip-path: polygon(0 0, 55% 0, 100% 100%, 0 100%); }
+          }
+
+          .shape {
+            --shape-animation: motion 2s linear infinite;
+          }
+
+          @keyframes motion {
+            0%, 100% { --shape-color: rgba(var(--rgb-blue), 0.3); }
+            50% { --shape-color: rgba(var(--rgb-blue), 0.2); }
+          }
+
+          }
+
+          {% else %}
+        mushroom-template-chip:nth-child(2)$: |
+          {% if is_state('binary_sensor.overloop2_motion_hue_occupancy','on') %}
+          ha-icon {
+            animation: clip 2s linear infinite;
+          }
+          @keyframes clip {
+            50% { clip-path: polygon(0 0, 55% 0, 100% 100%, 0 100%); }
+          }
+          .shape {
+            --shape-animation: motion 2s linear infinite;
+          }
+          @keyframes motion {
+            0%, 100% { --shape-color: rgba(var(--rgb-blue), 0.3); }
+            50% { --shape-color: rgba(var(--rgb-blue), 0.2); }
+          }
+          }
+          {% else %}
+
+          {% endif %}
+          }
