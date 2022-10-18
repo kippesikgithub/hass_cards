@@ -12,6 +12,8 @@ You need the card mod from hacs
 # Chips top overview Card
 ## chips_top_overview
 ![image](https://user-images.githubusercontent.com/100353268/196527441-bf5db081-7fce-4f2d-b925-9ab8c9193311.png)
+### color changing and animated mushroom chip icons for solar
+### color changing mushroom chip icons for window and doors
 
 # Graph Card
 ## graph_temperature_humidity
