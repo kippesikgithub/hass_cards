@@ -1,6 +1,5 @@
 # hass_cards
-These room cards can easily be inserted into grid cards.
-You need the vertical stack in card from hacs
+These room cards can easily be inserted into grid cards. You need the "vertical stack in card" AND "card mod" from hacs.
 You need the card mod from hacs
 
 # Person Card
