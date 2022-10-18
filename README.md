@@ -7,6 +7,11 @@ You need the card mod from hacs
 ![image](https://user-images.githubusercontent.com/100353268/196523170-79faf70d-71f6-4014-b65c-054e8d0639cb.png)
 ### color changing mushroom chip icons for charging, batterylevel and bluetooth ble (for inhome ble tracking)
 
+# Graph Card
+## graph_temperature_humidity
+![image](https://user-images.githubusercontent.com/100353268/196525829-1f878827-c4f5-46dc-a68c-e39f99ffbd82.png)
+
+
 # Room Cards
 ## badkamer_overview
 ![image](https://user-images.githubusercontent.com/100353268/196522133-a582c545-22be-44ca-89e5-9cfb9c70f77d.png)
