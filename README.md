@@ -9,6 +9,10 @@ You need the card mod from hacs
 ![image](https://user-images.githubusercontent.com/100353268/196523170-79faf70d-71f6-4014-b65c-054e8d0639cb.png)
 ### color changing mushroom chip icons for charging, batterylevel and bluetooth ble (for inhome ble tracking)
 
+# Chips top overview Card
+## chips_top_overview
+![image](https://user-images.githubusercontent.com/100353268/196527441-bf5db081-7fce-4f2d-b925-9ab8c9193311.png)
+
 # Graph Card
 ## graph_temperature_humidity
 ![image](https://user-images.githubusercontent.com/100353268/196525829-1f878827-c4f5-46dc-a68c-e39f99ffbd82.png)
