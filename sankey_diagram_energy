@@ -1,0 +1,166 @@
+type: custom:sankey-chart
+height: 700
+show_names: true
+show_icons: false
+min_box_height: 3
+min_box_distance: 5
+wide: true
+round: 1
+sections:
+  - entities:
+      - entity_id: sensor.envoy_122217065650_current_power_production
+        color: orange
+        children:
+          - sensor.total_energy_consumption
+      - entity_id: sensor.current_power_usage
+        color: blue
+        children:
+          - sensor.total_energy_consumption
+  - entities:
+      - entity_id: sensor.total_energy_consumption
+        color: teal
+        children:
+          - sensor.keuken_total_energy
+          - sensor.garage_total_energy
+          - sensor.zolder_total_energy
+          - sensor.woonkamer_total_energy
+          - sensor.lampen_total_energy
+          - sensor.teruglevering_total_energy
+          - overig
+  - entities:
+      - entity_id: sensor.keuken_total_energy
+        color: magenta
+        children:
+          - sensor.shellyplugs_vaatwasser_power
+          - sensor.shellyplugs_quooker_power
+          - sensor.keuken_oven_plug_bw_power
+          - sensor.shellyplugs_koelkast_power
+          - sensor.shelly1pm_vriezer_power
+      - entity_id: sensor.garage_total_energy
+        color: olive
+        children:
+          - sensor.garage_drone_opladers_plug_bw_power
+          - sensor.garage_elektronica_plug_bw_power
+          - sensor.shelly1pm_koelkastgarage_power
+          - sensor.bakfiets_plug_bw_power
+      - entity_id: sensor.zolder_total_energy
+        color: green
+        children:
+          - sensor.shelly1pm_wasmachine_power
+          - sensor.shelly1pm_droger_power
+          - sensor.werkplek_sander_plug_bw_power
+          - sensor.shellyplugs_3dprinter_e3pro_power
+          - sensor.shelly1pm_servers_power
+          - sensor.washok_elektronica_plug_bw_power
+      - entity_id: sensor.woonkamer_total_energy
+        color: orange
+        children:
+          - sensor.shelly1pm_multimedia_power
+          - sensor.woonkamer_zithoek_electronica_plug_bw_power
+      - entity_id: sensor.lampen_total_energy
+        color: yellow
+        children:
+          - sensor.shellydim_toilet_power
+          - sensor.trapkast_hue_power
+          - sensor.staanlamp_hue_power
+          - sensor.eettafel_hue_power
+          - sensor.meterkast_hue_power
+          - sensor.garage_voor_hue_power
+          - sensor.garage_achter_hue_power
+          - sensor.masterbedroom_spot1_hue_power
+          - sensor.masterbedroom_spot2_hue_power
+          - sensor.masterbedroom_spot3_hue_power
+          - sensor.overloop1_hue_power
+          - sensor.kinderkamer_sophie_hue_power
+          - sensor.kleinekamer_hue_power
+          - sensor.overloop2_hue_power
+          - sensor.zolderkamer_hue_power
+          - sensor.bureau_sophie_power
+          - sensor.wled_unicorn_power
+          - sensor.wled_kapstok_power
+          - sensor.wled_lines_power
+          - sensor.wled_kerstboom_power
+          - sensor.wled_monitor_power
+      - entity_id: sensor.teruglevering_total_energy
+        color: purple
+      - entity_id: overig
+        type: remaining_parent_state
+        name: Overig
+        color: red
+  - entities:
+      - entity_id: sensor.shellyplugs_vaatwasser_power
+        color: magenta
+      - entity_id: sensor.shellyplugs_quooker_power
+        color: magenta
+      - entity_id: sensor.keuken_oven_plug_bw_power
+        color: magenta
+      - entity_id: sensor.shellyplugs_koelkast_power
+        color: magenta
+      - entity_id: sensor.shelly1pm_vriezer_power
+        color: magenta
+      - entity_id: sensor.garage_drone_opladers_plug_bw_power
+        color: olive
+      - entity_id: sensor.garage_elektronica_plug_bw_power
+        color: olive
+      - entity_id: sensor.shelly1pm_koelkastgarage_power
+        color: olive
+      - entity_id: sensor.bakfiets_plug_bw_power
+        color: olive
+      - entity_id: sensor.shelly1pm_wasmachine_power
+        color: green
+      - entity_id: sensor.shelly1pm_droger_power
+        color: green
+      - entity_id: sensor.werkplek_sander_plug_bw_power
+        color: green
+      - entity_id: sensor.shellyplugs_3dprinter_e3pro_power
+        color: green
+      - entity_id: sensor.washok_elektronica_plug_bw_power
+        color: green
+      - entity_id: sensor.shelly1pm_servers_power
+        color: green
+      - entity_id: sensor.shelly1pm_multimedia_power
+        color: orange
+      - entity_id: sensor.woonkamer_zithoek_electronica_plug_bw_power
+        color: orange
+      - entity_id: sensor.shellydim_toilet_power
+        color: yellow
+      - entity_id: sensor.trapkast_hue_power
+        color: yellow
+      - entity_id: sensor.staanlamp_hue_power
+        color: yellow
+      - entity_id: sensor.eettafel_hue_power
+        color: yellow
+      - entity_id: sensor.meterkast_hue_power
+        color: yellow
+      - entity_id: sensor.garage_voor_hue_power
+        color: yellow
+      - entity_id: sensor.garage_achter_hue_power
+        color: yellow
+      - entity_id: sensor.masterbedroom_spot1_hue_power
+        color: yellow
+      - entity_id: sensor.masterbedroom_spot2_hue_power
+        color: yellow
+      - entity_id: sensor.masterbedroom_spot3_hue_power
+        color: yellow
+      - entity_id: sensor.overloop1_hue_power
+        color: yellow
+      - entity_id: sensor.kinderkamer_sophie_hue_power
+        color: yellow
+      - entity_id: sensor.kleinekamer_hue_power
+        color: yellow
+      - entity_id: sensor.overloop2_hue_power
+        color: yellow
+      - entity_id: sensor.zolderkamer_hue_power
+        color: yellow
+      - entity_id: sensor.bureau_sophie_power
+        color: yellow
+      - entity_id: sensor.wled_unicorn_power
+        color: yellow
+      - entity_id: sensor.wled_kapstok_power
+        color: yellow
+      - entity_id: sensor.wled_lines_power
+        color: yellow
+      - entity_id: sensor.wled_kerstboom_power
+        color: yellow
+      - entity_id: sensor.wled_monitor_power
+        color: yellow
