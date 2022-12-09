@@ -22,7 +22,7 @@ You need the card mod from hacs
 
 # Sankey Diagram
 ## sankey_diagram_energy 
-![image](https://user-images.githubusercontent.com/100353268/205429945-0596c4b3-98e4-4fcd-924f-1176d40ea334.png)
+![image](https://user-images.githubusercontent.com/100353268/206716535-38c4c14a-430c-4ab9-9dbc-9859db7c1085.png)
 
 
 # Room Cards
