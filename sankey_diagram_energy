@@ -23,8 +23,11 @@ sections:
           - sensor.keuken_total_energy
           - sensor.garage_total_energy
           - sensor.zolder_total_energy
-          - sensor.woonkamer_total_energy
+          - sensor.beneden_total_energy
+          - sensor.sophie_total_energy
+          - sensor.lucas_total_energy
           - sensor.lampen_total_energy
+          - sensor.meterkast_total_energy
           - sensor.teruglevering_total_energy
           - overig
   - entities:
@@ -36,10 +39,10 @@ sections:
           - sensor.keuken_oven_plug_bw_power
           - sensor.shellyplugs_koelkast_power
           - sensor.shelly1pm_vriezer_power
+          - sensor.shelly1pm_koffie_power
       - entity_id: sensor.garage_total_energy
         color: olive
         children:
-          - sensor.garage_drone_opladers_plug_bw_power
           - sensor.garage_elektronica_plug_bw_power
           - sensor.shelly1pm_koelkastgarage_power
           - sensor.bakfiets_plug_bw_power
@@ -52,11 +55,24 @@ sections:
           - sensor.shellyplugs_3dprinter_e3pro_power
           - sensor.shelly1pm_servers_power
           - sensor.washok_elektronica_plug_bw_power
-      - entity_id: sensor.woonkamer_total_energy
+      - entity_id: sensor.beneden_total_energy
         color: orange
         children:
+          - sensor.vloerverwarming_pomp_plug_tuya_power
           - sensor.shelly1pm_multimedia_power
           - sensor.woonkamer_zithoek_electronica_plug_bw_power
+      - entity_id: sensor.sophie_total_energy
+        color: pink
+        children:
+          - sensor.kinderkamer_sophie_elektronica_plug_tuya_power
+      - entity_id: sensor.lucas_total_energy
+        color: blue
+        children:
+          - sensor.kinderkamer_lucas_electronica_plug_tuya_power
+      - entity_id: sensor.meterkast_total_energy
+        color: cyan
+        children:
+          - sensor.meterkast_elektronica_plug_bw_power
       - entity_id: sensor.lampen_total_energy
         color: yellow
         children:
@@ -71,6 +87,7 @@ sections:
           - sensor.masterbedroom_spot2_hue_power
           - sensor.masterbedroom_spot3_hue_power
           - sensor.overloop1_hue_power
+          - sensor.hue_tv_ledstrip_power
           - sensor.kinderkamer_sophie_hue_power
           - sensor.kleinekamer_hue_power
           - sensor.overloop2_hue_power
@@ -80,7 +97,6 @@ sections:
           - sensor.wled_kapstok_power
           - sensor.wled_lines_power
           - sensor.wled_kerstboom_power
-          - sensor.wled_monitor_power
       - entity_id: sensor.teruglevering_total_energy
         color: purple
       - entity_id: overig
@@ -98,8 +114,8 @@ sections:
         color: magenta
       - entity_id: sensor.shelly1pm_vriezer_power
         color: magenta
-      - entity_id: sensor.garage_drone_opladers_plug_bw_power
-        color: olive
+      - entity_id: sensor.shelly1pm_koffie_power
+        color: magenta
       - entity_id: sensor.garage_elektronica_plug_bw_power
         color: olive
       - entity_id: sensor.shelly1pm_koelkastgarage_power
@@ -118,10 +134,18 @@ sections:
         color: green
       - entity_id: sensor.shelly1pm_servers_power
         color: green
+      - entity_id: sensor.vloerverwarming_pomp_plug_tuya_power
+        color: orange
       - entity_id: sensor.shelly1pm_multimedia_power
         color: orange
       - entity_id: sensor.woonkamer_zithoek_electronica_plug_bw_power
         color: orange
+      - entity_id: sensor.kinderkamer_sophie_elektronica_plug_tuya_power
+        color: pink
+      - entity_id: sensor.kinderkamer_lucas_electronica_plug_tuya_power
+        color: blue
+      - entity_id: sensor.meterkast_elektronica_plug_bw_power
+        color: cyan
       - entity_id: sensor.shellydim_toilet_power
         color: yellow
       - entity_id: sensor.trapkast_hue_power
@@ -162,5 +186,5 @@ sections:
         color: yellow
       - entity_id: sensor.wled_kerstboom_power
         color: yellow
-      - entity_id: sensor.wled_monitor_power
+      - entity_id: sensor.hue_tv_ledstrip_power
         color: yellow
