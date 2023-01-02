@@ -9,7 +9,8 @@ cards:
     entity: light.staanlamp_hue
     secondary: >-
       {{states('sensor.woonkamer_motion_hue_temperature') }}°C |
-      {{states('sensor.woonkamer_motion_hue_illuminance_lux') | int }}lux
+      {{states('sensor.woonkamer_motion_hue_illuminance_lux') | int }}lux |
+      {{states('sensor.woonkamer_total_energy_watt') | int }}W
     tap_action:
       action: navigate
       navigation_path: /lovelace-tablet/woonkamer
@@ -55,6 +56,19 @@ cards:
           {% endif %}
         icon_color: |-
           {% if is_state('switch.esp_servieskast_kerst', 'on') %}
+            yellow
+          {% endif %}
+      - type: custom:mushroom-template-card
+        entity: switch.kerstboom
+        layout: vertical
+        icon: |-
+          {% if is_state('switch.kerstboom', 'on') %}
+          mdi:pine-tree
+          {% else %}
+          mdi:pine-tree
+          {% endif %}
+        icon_color: |-
+          {% if is_state('switch.kerstboom', 'on') %}
             yellow
           {% endif %}
   - type: custom:vertical-stack-in-card
@@ -104,6 +118,31 @@ cards:
   - type: custom:mushroom-chips-card
     chips:
       - type: template
+        icon: |-
+          {% if is_state(entity, 'playing') %}
+          mdi:television-play
+          {% elif is_state(entity, 'paused') %}
+          mdi:television-pause
+          {% elif is_state(entity, 'idle') %}
+          mdi:television
+          {% else %}
+          mdi:television
+          {% endif %}
+        icon_color: |2-
+            {% if is_state(entity, 'playing') %}
+            yellow
+            {% elif is_state(entity, 'paused') %}
+            yellow
+            {% elif is_state(entity, 'idle') %}
+            yellow
+            {% else %}
+            grey
+            {% endif %}
+        entity: media_player.philipstv
+        content: '{{ state_attr(''media_player.philipstv'', ''source'') }}'
+        tap_action:
+          action: more-info
+      - type: template
         icon: mdi:motion-sensor
         icon_color: |2-
             {% if is_state(entity, 'on') %}
@@ -136,12 +175,13 @@ cards:
       style:
         mushroom-template-chip: |
           ha-card {
-            --chip-box-shadow: none;
+            --ha-card-box-shadow: none;
             --chip-background: none;
+            --chip-box-shadow: none;
             --chip-spacing: 0;
             : -36px;
           } 
-        mushroom-template-chip:nth-child(1)$: |
+        mushroom-template-chip:nth-child(2)$: |
           {% if is_state('binary_sensor.woonkamer_motion_hue_occupancy','on') %}
           ha-icon {
             animation: clip 2s linear infinite;
