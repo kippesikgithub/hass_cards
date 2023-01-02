@@ -79,8 +79,9 @@ cards:
     card_mod:
       style: |
         ha-card {
-          --chip-box-shadow: none;
+          --ha-card-box-shadow: none;
           --chip-background: none;
+          --chip-box-shadow: none;
           --chip-spacing: 0;
           : -36px;
         } 
