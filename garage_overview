@@ -72,7 +72,7 @@ cards:
             {% else %}
             grey
             {% endif %}
-        entity: switch.bakfietslader
+        entity: switch.bakfiets_plug_bw
         tap_action:
           action: more-info
       - type: conditional
@@ -122,9 +122,10 @@ cards:
     card_mod:
       style: |
         ha-card {
-          --chip-box-shadow: none;
-          --chip-background: none;
-          --chip-spacing: 0;
+            --ha-card-box-shadow: none;
+            --chip-background: none;
+            --chip-box-shadow: none;
+            --chip-spacing: 0;
           : -36px;
         } 
         mushroom-template-chip:nth-child(1)$: |
