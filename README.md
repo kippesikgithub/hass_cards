@@ -27,7 +27,7 @@ You need the card mod from hacs
 
 # Room Cards
 ## badkamer_overview
-![image](https://user-images.githubusercontent.com/100353268/196522133-a582c545-22be-44ca-89e5-9cfb9c70f77d.png)
+![badkamer](https://user-images.githubusercontent.com/100353268/210237780-4b17d856-ae77-41a8-ab4e-00f879cd3b49.gif)
 ### color changing and animated mushroom chip icons for shower, fan and charging toothbrushes
 ### color changing mushroom chip icons for window
 ##
