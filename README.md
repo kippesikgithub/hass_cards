@@ -21,7 +21,7 @@ You need the card mod from hacs
 ![image](https://user-images.githubusercontent.com/100353268/196525829-1f878827-c4f5-46dc-a68c-e39f99ffbd82.png)
 
 # Sankey Diagram
-## check my repo detailed_power_measurement
+## check my repo detailed_power_monitoring
 ![image](https://user-images.githubusercontent.com/100353268/206716535-38c4c14a-430c-4ab9-9dbc-9859db7c1085.png)
 
 
