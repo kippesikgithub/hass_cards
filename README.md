@@ -24,6 +24,15 @@ You need the card mod from hacs
 ## check my repo detailed_power_monitoring
 ![image](https://user-images.githubusercontent.com/100353268/206716535-38c4c14a-430c-4ab9-9dbc-9859db7c1085.png)
 
+# Media Player Cards
+## option 1 (volumio mediaplayer)
+media_player_option1.yaml
+![image](https://github.com/kippesikgithub/hass_cards/assets/100353268/e38770f2-b354-47fd-830b-2bd4ef619065)
+
+## option 2 (esp media player)
+media_player_option2.yaml
+![image](https://github.com/kippesikgithub/hass_cards/assets/100353268/139b7a20-cf6b-44a5-bd16-3693864d436b)
+
 
 # Room Cards
 ## badkamer_overview
