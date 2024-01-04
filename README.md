@@ -1,7 +1,7 @@
 # OLD repository, see updated version 
 https://github.com/kippesikgithub/ha_cards_interface
 
-# hass_cards
+# OLD hass_cards
 These room cards can easily be inserted into grid cards, in our setup, clicking on the card itself navigates you to the subview of that room. It is far from finished, but can be handy as examples for your own cards if you like them. You need the "vertical stack in card" AND "card mod" from hacs.
 You need the card mod from hacs
 ##
